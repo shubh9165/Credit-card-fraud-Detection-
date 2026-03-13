@@ -20,4 +20,5 @@ jinja2
 imblearn
 dvc
 mlflow
+python-dotenv
 -e .
