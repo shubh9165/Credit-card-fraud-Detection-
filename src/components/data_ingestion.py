@@ -23,7 +23,7 @@ class DataIngestion:
             
             my_data=proj1()
             df=my_data.export_data(collction_name)
-            logging.info("data frame loaded from mongodb")
+            logging.info("data frame loaded from mongodb and proj1 file work are done")
 
             df["Hour"] = df["Time"] / 3600
             df["Hour"] = df["Hour"] % 24
@@ -47,7 +47,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
 
         try:
-            logging.info("data ingestion process are start")
+            logging.info("data ingestion initiation  process are start")
             data_frame=self.get_data(collction_name=DATA_INGESTION_COLLECTION_NAME)
 
             X=data_frame.drop(columns=['Class'])
@@ -70,6 +70,3 @@ class DataIngestion:
         except Exception as e:
             raise MyException(e,sys)
         
-if __name__=='__main__':
-    obj=DataIngestion()
-    obj.initiate_data_ingestion()
