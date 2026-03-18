@@ -64,7 +64,8 @@ class DataIngestion:
 
             logging.info("train and test data saved")
 
-            data_ingestion_artifact=DataIngestionArtifact(Train_data,Test_data)
+            data_ingestion_artifact=DataIngestionArtifact(self.data_ingestion_config.training_file_path,
+                                            self.data_ingestion_config.test_file_path)
             return data_ingestion_artifact
 
         except Exception as e:
