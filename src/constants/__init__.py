@@ -74,7 +74,7 @@ EXEPECTED_ACCURACY=0.95
 MODEL Evaluation related constants
 """
 MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
-MODEL_BUCKET_NAME = "credit-card-fraud-detectoion"
+MODEL_BUCKET_NAME = "credit-card-fraud-detection-proj"
 MODEL_PUSHER_S3_KEY = "model-registry"
 
 

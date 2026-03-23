@@ -1,5 +1,5 @@
 from src.cloud_storage.aws_storage import SimpleStorageService
-from src.exception import MyException
+from src.exception.exception import MyException
 from src.entity.estimator import MyModel
 import sys
 from pandas import DataFrame
