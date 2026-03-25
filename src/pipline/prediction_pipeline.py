@@ -4,6 +4,9 @@ from src.entity.s3_estimator import Proj1Estimator
 from src.exception.exception import MyException
 from src.logger.logger import logging
 from pandas import DataFrame
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class CreditCardData:
@@ -120,8 +123,8 @@ class CreditCardData:
                 "V25": [self.V25],
                 "V26": [self.V26],
                 "V27": [self.V27],
+                "V28": [self.V28],
                 "Amount": [self.Amount],
-                "Class": [self.Class],
                 "Hour": [self.Hour],
                 "time_diff": [self.time_diff]
             }
@@ -145,8 +148,8 @@ class CreditCardDataClassifier:
             logging.info("Entered predict method")
 
             model = Proj1Estimator(
-                bucket_name=self.prediction_pipeline_config.model_bucket_name,
-                model_path=self.prediction_pipeline_config.model_file_path,
+                bucket_name=self.prediction_pipeline_config.bucket_name,
+                model_path=self.prediction_pipeline_config.s3_model_key_path,
             )
 
             result = model.predict(dataframe)

@@ -1,113 +1,118 @@
-/* styles.css */
-
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
+/* Reset */
+* {
     margin: 0;
-    background-color: #f4f6f8;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
 .container {
-    width: 100%;
-    max-width: 600px;
-    max-height: 90vh; /* ✅ scrollable */
-    overflow-y: auto; /* ✅ important for many inputs */
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 95%;
+    max-width: 900px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Title */
 h1 {
-    color: #333;
-    margin-bottom: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #38bdf8;
 }
 
-/* Form layout */
+/* Form Layout */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
-/* Label */
+/* Labels */
 label {
-    text-align: left;
-    color: #444;
-    font-weight: 600;
-    font-size: 14px;
+    font-size: 0.9rem;
+    color: #cbd5f5;
 }
 
-/* Input */
+/* Inputs */
 input {
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 14px;
-    transition: 0.2s ease;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #1e293b;
+    color: white;
+    transition: 0.3s;
 }
 
-/* Input focus effect */
+/* Input Hover */
 input:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+    border: 1px solid #38bdf8;
+    box-shadow: 0 0 10px #38bdf8;
 }
 
 /* Buttons */
 button {
+    grid-column: span 2;
     padding: 12px;
-    background-color: #007bff;
-    color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    color: white;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
-    transition: 0.2s ease;
+    transition: 0.3s;
 }
 
+/* Button Hover */
 button:hover {
-    background-color: #0056b3;
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4);
 }
 
-/* Train button */
+/* Train Button */
 .train-button {
-    background-color: #28a745;
     margin-top: 10px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
 }
 
-.train-button:hover {
-    background-color: #218838;
-}
-
-/* Result */
+/* Result Box */
 .result {
     margin-top: 20px;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #eef5ff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.08);
 }
 
+/* Fraud Result */
 .result h2 {
-    color: #007bff;
+    color: #f87171;
 }
 
-/* Scrollbar (optional styling) */
-.container::-webkit-scrollbar {
-    width: 6px;
-}
+/* Responsive */
+@media (max-width: 600px) {
+    form {
+        grid-template-columns: 1fr;
+    }
 
-.container::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-
-.container::-webkit-scrollbar-thumb:hover {
-    background: #999;
+    button {
+        grid-column: span 1;
+    }
 }

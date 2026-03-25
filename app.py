@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.responses import HTMLResponse, RedirectResponse
 from uvicorn import run as app_run
-
+from dotenv import load_dotenv
 from typing import Optional
 
 # Importing constants and pipeline modules from the project
@@ -13,6 +13,7 @@ from src.constants import APP_HOST, APP_PORT
 from src.pipline.prediction_pipeline import CreditCardData, CreditCardDataClassifier
 from src.pipline.training_pipeline import TrainingPipeline
 
+load_dotenv()
 
 app=FastAPI()
 
@@ -71,44 +72,43 @@ class DataForm:
         self.Hour: Optional[int] = None
         self.Time_diff: Optional[float] = None
 
-    async def get_vehicle_data(self):
+    async def get_credit_Card_data(self):
         form = await self.request.form()
 
-        self.Time = form.get("Time")
+        self.Time = float(form.get("Time"))
 
-        self.V1 = form.get("V1")
-        self.V2 = form.get("V2")
-        self.V3 = form.get("V3")
-        self.V4 = form.get("V4")
-        self.V5 = form.get("V5")
-        self.V6 = form.get("V6")
-        self.V7 = form.get("V7")
-        self.V8 = form.get("V8")
-        self.V9 = form.get("V9")
-        self.V10 = form.get("V10")
-        self.V11 = form.get("V11")
-        self.V12 = form.get("V12")
-        self.V13 = form.get("V13")
-        self.V14 = form.get("V14")
-        self.V15 = form.get("V15")
-        self.V16 = form.get("V16")
-        self.V17 = form.get("V17")
-        self.V18 = form.get("V18")
-        self.V19 = form.get("V19")
-        self.V20 = form.get("V20")
-        self.V21 = form.get("V21")
-        self.V22 = form.get("V22")
-        self.V23 = form.get("V23")
-        self.V24 = form.get("V24")
-        self.V25 = form.get("V25")
-        self.V26 = form.get("V26")
-        self.V27 = form.get("V27")
-        self.V28 = form.get("V28")
+        self.V1 = float(form.get("V1"))
+        self.V2 = float(form.get("V2"))
+        self.V3 = float(form.get("V3"))
+        self.V4 = float(form.get("V4"))
+        self.V5 = float(form.get("V5"))
+        self.V6 = float(form.get("V6"))
+        self.V7 = float(form.get("V7"))
+        self.V8 = float(form.get("V8"))
+        self.V9 = float(form.get("V9"))
+        self.V10 = float(form.get("V10"))
+        self.V11 = float(form.get("V11"))
+        self.V12 = float(form.get("V12"))
+        self.V13 = float(form.get("V13"))
+        self.V14 = float(form.get("V14"))
+        self.V15 = float(form.get("V15"))
+        self.V16 = float(form.get("V16"))
+        self.V17 = float(form.get("V17"))
+        self.V18 = float(form.get("V18"))
+        self.V19 = float(form.get("V19"))
+        self.V20 = float(form.get("V20"))
+        self.V21 = float(form.get("V21"))
+        self.V22 = float(form.get("V22"))
+        self.V23 = float(form.get("V23"))
+        self.V24 = float(form.get("V24"))
+        self.V25 = float(form.get("V25"))
+        self.V26 = float(form.get("V26"))
+        self.V27 = float(form.get("V27"))
+        self.V28 = float(form.get("V28"))
 
-        self.Amount = form.get("Amount")
-        self.Hour = form.get("Hour")
-        self.time_diff = form.get("time_diff")
-
+        self.Amount = float(form.get("Amount"))
+        self.Hour = float(form.get("Hour"))
+        self.time_diff = float(form.get("time_diff"))
 # Route to render the main page with the form
 @app.get("/", tags=["authentication"])
 async def index(request: Request):
@@ -141,7 +141,7 @@ async def predictRouteClient(request: Request):
     """
     try:
         form = DataForm(request)
-        await form.get_CreditCard_data_as_dict()
+        await form.get_credit_Card_data()
         
         credit_card_data = CreditCardData(
                         Time=form.Time,
