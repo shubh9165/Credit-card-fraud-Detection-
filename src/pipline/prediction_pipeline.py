@@ -1,8 +1,8 @@
 import sys
 from src.entity.config_entity import CreditCardConfig
 from src.entity.s3_estimator import Proj1Estimator
-from src.exception import MyException
-from src.logger import logging
+from src.exception.exception import MyException
+from src.logger.logger import logging
 from pandas import DataFrame
 
 
@@ -80,8 +80,8 @@ class CreditCardData:
 
     def get_CreditCard_data_frame(self) -> DataFrame:
         try:
-            vehicle_input_dict = self.get_CreditCard_data_as_dict()
-            return DataFrame(vehicle_input_dict)
+            credit_card_input_dict = self.get_CreditCard_data_as_dict()
+            return DataFrame(credit_card_input_dict)
         
         except Exception as e:
             raise MyException(e, sys) from e
@@ -133,7 +133,7 @@ class CreditCardData:
             raise MyException(e, sys) from e
 
 
-class VehicleDataClassifier:
+class CreditCardDataClassifier:
     def __init__(self, prediction_pipeline_config: CreditCardConfig = CreditCardConfig()) -> None:
         try:
             self.prediction_pipeline_config = prediction_pipeline_config

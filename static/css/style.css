@@ -1,0 +1,113 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f6f8;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh; /* ✅ scrollable */
+    overflow-y: auto; /* ✅ important for many inputs */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title */
+h1 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Label */
+label {
+    text-align: left;
+    color: #444;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Input */
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+/* Input focus effect */
+input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Buttons */
+button {
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Train button */
+.train-button {
+    background-color: #28a745;
+    margin-top: 10px;
+}
+
+.train-button:hover {
+    background-color: #218838;
+}
+
+/* Result */
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #eef5ff;
+}
+
+.result h2 {
+    color: #007bff;
+}
+
+/* Scrollbar (optional styling) */
+.container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
