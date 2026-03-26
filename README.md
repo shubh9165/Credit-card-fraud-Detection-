@@ -95,7 +95,7 @@ MongoDB Atlas → Data Ingestion → Data Validation → Data Transformation
 
 ```
 conda create -n vehicle python=3.10 -y
-conda activate vehicle
+conda activate CreditCardFraudDetection
 pip install -r requirements.txt
 ```
 
