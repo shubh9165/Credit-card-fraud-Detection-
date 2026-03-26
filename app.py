@@ -176,7 +176,7 @@ async def predictRouteClient(request: Request):
         return templates.TemplateResponse(
             request=request,
             name="vehicledata.html",
-            context={"context": "Rendering"}
+            context={"context": status}
         )
         
     except Exception as e:
