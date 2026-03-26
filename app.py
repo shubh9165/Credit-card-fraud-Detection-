@@ -116,7 +116,9 @@ async def index(request: Request):
     Renders the main HTML form page for vehicle data input.
     """
     return templates.TemplateResponse(
-            "vehicledata.html",{"request": request, "context": "Rendering"})
+        name="vehicledata.html",
+        context={"request": request, "context": "Rendering"}
+    )
 
 
 # Route to trigger the model training process
@@ -171,8 +173,8 @@ async def predictRouteClient(request: Request):
 
         # Render the same HTML page with the prediction result
         return templates.TemplateResponse(
-            "vehicledata.html",
-            {"request": request, "context": status},
+            name="vehicledata.html",
+            context={"request": request, "context": status}
         )
         
     except Exception as e:
