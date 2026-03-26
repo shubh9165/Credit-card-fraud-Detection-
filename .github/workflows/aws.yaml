@@ -1,3 +1,4 @@
+'''
 name: Deploy Application Docker Image to EC2 instance
 
 on:
@@ -70,4 +71,4 @@ jobs:
           -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
           -e AWS_DEFAULT_REGION=${{ secrets.AWS_DEFAULT_REGION }} \
           -e MONGODB_URL=${{ secrets.MONGODB_URL }} \
-          ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPO }}:latest
+          ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPO }}:latest"
