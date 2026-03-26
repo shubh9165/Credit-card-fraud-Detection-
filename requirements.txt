@@ -21,4 +21,5 @@ imblearn
 dvc
 mlflow
 python-dotenv
+xgboost
 -e .
