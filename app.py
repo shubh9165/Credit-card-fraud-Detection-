@@ -37,6 +37,7 @@ app.add_middleware(
 
 class DataForm:
 
+
     def __init__(self, request: Request):
         self.request: Request = request
         self.Time: Optional[int] = None
